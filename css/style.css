@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,800&display=swap");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: color .2s, background-color .2s, transform 2s;
+}
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: min(70%, 30vw);
+  justify-content: center;
+  grid-template-rows: min(65vh, 90%);
+  align-content: center;
+  background: #333333;
+}
+.main .container {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.main .container .user {
+  background: url("../img/brice.jpg") no-repeat 100% 100%/100% 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* backface-visibility: hidden; */
+  transform: translateX(0%) rotateY(90deg);
+  transform-origin: right;
+}
+.main .container .description {
+  width: 100%;
+  height: 100%;
+  background: #eeeeee;
+  display: grid;
+  place-content: center;
+  grid-template-columns: 83%;
+  grid-template-rows: 20%;
+  place-items: center;
+}
+.main .container .description .follow_read {
+  width: 70%;
+  height: 55%;
+  position: relative;
+  background: #3399ff;
+  border-radius: 0.2rem;
+  color: #ffffff;
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  /* display: grid; */
+  /* place-content: center; */
+  /* border: 1px solid #ffffff; */
+  /* perspective: 600px; */
+}
+.main .container .description .follow_read .follow {
+  position: absolute;
+  transform-origin: bottom;
+  backface-visibility: hidden;
+  transform: translateY(-100%) rotateX(90deg);
+  background: #3399ff;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: grid;
+  place-content: center;
+  /* z-index: -11; */
+  border: 1px solid #ffffff;
+  /* perspective: 600px; */
+}
+.main .container .description .follow_read .read {
+  backface-visibility: hidden;
+  background: #3399ff;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: absolute;
+  display: grid;
+  place-content: center;
+  border: 1px solid #ffffff;
+  /* perspective: 600px;*/
+}
+.main .container .description .follow_read:hover {
+  transform: perspective(600px) rotateX(-90deg);
+  transform-origin: bottom;
+  /* perspective: 600px; */
+}
+.main .container .description .follow_read:active {
+  transform: perspective(600px) rotateX(-90deg);
+  transform-origin: bottom;
+  /* perspective: 600px; */
+}
+.main .container .description .icons {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  grid-template-columns: repeat(5, 22%);
+  place-content: center;
+  place-items: center;
+  grid-template-rows: 50px;
+  /* background: black; */
+}
+.main .container .description .icons .item {
+  background: white;
+  width: 40px;
+  height: 80%;
+  place-content: center;
+  display: grid;
+  border-radius: 1rem;
+  grid-template-rows: 1.5em;
+}
+.main .container .description .icons .item:hover {
+  background: #333333;
+  cursor: pointer;
+}
+.main .container .description .icons .item:hover > svg {
+  fill: white;
+}
+.main .container .description .icons .item > svg {
+  fill: #3399ff;
+}
+.main .container:hover {
+  transform: perspective(100rem) translateX(-35%) rotateY(45deg);
+}
+.main .container:active {
+  transform: perspective(100rem) translateX(-35%) rotateY(45deg);
+}
+
+img, svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 520px) {
+  .main {
+    grid-template-columns: min(70%, 60vw);
+  }
+}
